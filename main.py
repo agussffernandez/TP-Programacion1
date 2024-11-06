@@ -1,1 +1,1 @@
-from funciones.mostrar_reglas import *
+from funciones.mostrar_informacion import *
