@@ -1,6 +1,27 @@
 from validaciones import *
 import random
 
+# Función para crear los ataques de los pokemones
+def crear_ataques(tipo) -> list:
+    """Genera ataques según el tipo del Pokémon.
+    
+    Arguments:
+        tipo(str): el tipo de pokemón
+    
+    Return:
+        (list): Lista con los ataques del tipo del pokemon
+    
+    """
+    if tipo == "Fuego":
+        return ["Lanzallamas", "Ember", "Puño fuego", "Golpe ardiente"]
+    elif tipo == "Agua":
+        return ["Hidrobomba", "Pistola de agua", "Surf", "Golpe acuario"]
+    elif tipo == "Planta":
+        return ["Rayo solar", "Hoja afilada", "Latigo cepa", "Drenaje"]
+    elif tipo == "Eléctrico":
+        return ["Rayo", "Trueno", "Impactrueno", "Puño trueno"]
+
+
 
 def elegir_pokemon_inicial() -> str:
     """ 
@@ -15,15 +36,18 @@ def elegir_pokemon_inicial() -> str:
     pokemones = {
         "1": {
             "nombre": "Charmander",
-            "tipo" : "Fuego"
+            "tipo" : "Fuego",
+            "ataques": crear_ataques("Fuego")
         },
         "2": {
             "nombre": "Squirtle",
-            "tipo" : "Agua"
+            "tipo" : "Agua",
+            "ataques": crear_ataques("Agua")
         },
         "3": {
             "nombre": "Bulbasaur",
-            "tipo" : "Planta y Veneno"
+            "tipo" : "Planta y Veneno",
+            "ataques": crear_ataques("Planta")
         }
     }
     
@@ -38,11 +62,14 @@ def elegir_pokemon_inicial() -> str:
     # Obtener el Pokémon elegido usando la opción validada
     pokemon_elegido = pokemones[opcion]
     
-    # Imprimir el nombre del Pokémon elegido
+    # Imprimir el nombre del Pokémon elegido 
     print(f"Has elegido a {pokemon_elegido["nombre"]}")
+    # Imprimir los ataques del pokemon
+    # "str".join():  Es un método de cadenas que se usa para unir los elementos de una lista (o cualquier iterable) en una sola cadena, usando el valor dentro de la cadena de la cual se llama el método como separador.
+    # Los elementos de la lista de ataques estarán separados por una coma y un espacio cuando los unamos.
+    print(f"Sus ataques son: {", ".join(pokemon_elegido["ataques"])}")
     
     return pokemon_elegido["nombre"]
-
 
 
 def elegir_oponente() -> str:
@@ -84,4 +111,3 @@ def elegir_oponente() -> str:
     
     return oponente_elegido['nombre']
 
-elegir_oponente()
