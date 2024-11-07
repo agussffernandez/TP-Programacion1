@@ -20,7 +20,7 @@ def elegir_oponente() -> str:
         },
         "4": {
             "nombre": "Pikachu",
-            "tipo": "Eléctrico"
+            "tipo": "Electrico"
         }
     }
     

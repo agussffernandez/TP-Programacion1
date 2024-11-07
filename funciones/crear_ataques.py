@@ -15,5 +15,5 @@ def crear_ataques(tipo) -> list:
         return ["Hidrobomba", "Pistola de agua", "Surf", "Golpe acuario"]
     elif tipo == "Planta":
         return ["Rayo solar", "Hoja afilada", "Latigo cepa", "Drenaje"]
-    elif tipo == "Eléctrico":
+    elif tipo == "Electrico":
         return ["Rayo", "Trueno", "Impactrueno", "Puño trueno"]
